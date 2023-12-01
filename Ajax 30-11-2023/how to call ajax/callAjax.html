@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script src="../../jQuery.js"></script>
+
+    <script>
+
+        var  myUrl  = "https://dummyjson.com/products/1"
+
+        $.ajax({
+            url : myUrl,
+            method : "GET",
+            dataType : "JSON",
+
+            success : (res)=>{
+                console.log(res[3].email);
+                console.log(res);
+                console.log(" Successfull communication")
+            },
+
+            error : ()=>{
+                console.log("Failed Communication")
+            }
+        })
+
+        
+
+    </script>
+    
+  
+    
+</body>
+</html>

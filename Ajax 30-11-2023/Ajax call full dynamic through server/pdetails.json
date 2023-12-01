@@ -1,0 +1,37 @@
+{
+
+
+"productList" : [ 
+        
+            {
+
+            "productname"     : "laptop",
+            "actualprice"  : 45000,
+            "discount"     : 10,
+            "manufacturer" : "Dell",
+           "rating"      : "4.5/5",
+            "Image"       : "https://i.dell.com/is/image/DellContent/content/dam/ss2/product-images/dell-client-products/notebooks/xps-notebooks/xps-13-9320/media-gallery/xs9320nt-xnb-shot-5-1-sl.psd?fmt=png-alpha&pscan=auto&scl=1&wid=3782&hei=2988&qlt=100,1&resMode=sharp2&size=3782,2988&chrss=full&imwidth=5000" 
+        },
+
+        {
+            "productname"     : "Pendrive",
+            "actualprice"  : 700,
+            "discount"     : 30,
+            "manufacturer" : "sandisk",
+           "rating"      : "4.5/5",
+            "Image"       : "https://isteam.wsimg.com/ip/a8efe83b-6857-477d-9d0f-f13ca0229a20/ols/1778_original/:/rs=w:600,h:600"     
+        },
+
+        {
+            "productname"     : "Tv",
+            "actualprice"  : 75000,
+            "discount"     : 30,
+            "manufacturer" : "samsung",
+           "rating"      : "4.2/5",
+            "Image"       : "https://rukminim2.flixcart.com/image/850/1000/xif0q/television/u/d/t/-original-imaghgphymnvxnaf.jpeg?q=90"  
+        
+        }
+
+    ]
+
+}
