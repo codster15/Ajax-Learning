@@ -1,2 +1,0 @@
-# Ajax-Learning
-Learing Ajax
