@@ -3,11 +3,45 @@
 var myurl = "http://localhost:8081/Ajax/Ajax%2030-11-2023/Ajax%20call%20full%20dynamic%20through%20server/pdetails.json"
 
 
+myurl = "http://localhost:8081/Durga%20sir%20web%20course/Ajax/Ajax%202%20dec%202023/Ajax%20call%20full%20dynamic%20through%20server%202%20dec%202023/pdetails.json"
+
 
  
  var product = [];
 
  var productdetails = (product) => {
+
+/**
+ * <ul class="pdetails">
+
+
+
+    <li>Product name : </li>
+
+    <li>Product price: </li>
+    <span class="actual"></span>
+    <span class="discount"></span>
+
+
+    <li>Manufacturer :</li>
+
+
+    <li>Rating : </li>
+
+
+    <li><img src="" alt=""></li>
+
+
+</ul>
+
+ * 
+ * 
+ */
+
+
+
+
+
 
     var ultag = document.createElement("ul");
     ultag.setAttribute("class", "pdetails");

@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    <button class="btn" onclick="submit();">click on me</button>
+
+    <div class="showdata"></div>
+
+    
+    <script src="jQuery.js"></script>
+
+
+    <script>
+
+var myURl = 'http://localhost:8081/Ajax/Ajax%2030-11-2023/Ajax%20call%20full%20dynamic%20through%20server/pdetails.json'
+
+   var submit = ()=>{
+    
+   $.ajax({
+      url : myURl,
+      method : "GET",
+      datatype : "JSON",
+      success : (response)=>{
+         // console.log("welcome");
+         for(var i = 0 ; i < 3 ; i++){
+            console.log(response.productList[i]);
+         }
+         
+         $(".showdata").text (JSON.stringify(response));
+      },
+      error:(error)=>{
+         console.log("failed");
+         console.log(error);
+      }
+   })
+}
+  
+ 
+
+
+
+    </script>
+
+
+
+
+</body>
+</html>

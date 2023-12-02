@@ -1,0 +1,44 @@
+
+
+
+
+{
+
+        "schoolList" : [
+            
+            {
+            "image" : "https://cdn-icons-png.flaticon.com/512/2602/2602414.png",
+            "name"  : "Wonder land",
+            "board" : "CBSC",
+            "city"  : "Mumbai",
+            "location" : "orem ipsum dolor sit, amet consectetur adipisicin"
+            
+        } ,
+         {
+            "image" : "https://illustoon.com/photo/2872.png",
+            "name"  : "New World",
+            "board" : "icsc",
+            "city"  : "banglore",
+            "location" : "orem ipsum dolor sit,wewefwfwwc wefwefwefw  weewfwe"
+        },
+        
+        {
+            "image" : "https://c1.klipartz.com/pngpicture/851/839/sticker-png-first-day-of-school-school-teacher-national-primary-school-education-preschool-kindergarten-school-building.png",
+            "name"  : "Christ school",
+            "board" : "CBSC",
+            "city"  : "Pune",
+            "location" : "orem ipsum dolor sit, amet consectetur adipisicin"
+            
+        },
+         {
+            "image" : "https://img.lovepik.com/free-png/20210926/lovepik-flat-school-building-vector-png-image_401434228_wh1200.png",
+            "name"  : "Kamla nehra Internation",
+            "board" : "UP.Board",
+            "city"  : "Delhi",
+            "location" : "orem ipsum dolor sit,wewefwfwwc wefwefwefw  weewfwe"
+        }
+
+        ]
+
+
+}
