@@ -77,3 +77,55 @@
 </body>
 
 -==================================================================================================
+
+
+lec -29-9-22
+time  - 50:00
+
+cors issues
+    JSONP
+    Cors config
+
+
+Dynamic Templating
+    Handlebars / jqueryplugin / mustache.js 
+       
+
+
+
+    CORS --> cross origin resource sharing
+
+    when we make communication between (client side to server side) same domain communiaction should happen . cross domain not allow.
+
+
+
+--> communication between the cross dowin jsuing the jsonp Datatype
+
+- what the are things required to make ajax call between the cross domian using the jsonp Datatype
+
+ *  url 
+
+ * type of communication (lec - 29-9-22  , time - 1:00:00)
+    -get/post
+
+* dataType: "JSONP"--------------> cors
+
+    
+*crossDomain : true,  -----------> cors
+
+
+* jsonpCAllback : "parseProductDetails",   -------------> cors
+
+
+
+ * two type of communication
+    -rest
+    -soap
+    
+ *Success : (){    --> its a call back method . if comunication Success this code will execute
+
+ }   
+
+ *Error : (){     -->  its a call back method . if comunication failed this code will execute
+
+ }

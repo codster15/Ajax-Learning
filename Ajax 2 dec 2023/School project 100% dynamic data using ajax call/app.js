@@ -101,14 +101,19 @@ document.querySelector(".maincontainer").append(ultag);
 
  btn.addEventListener("click" , ()=>{
 
-    var myurl = "http://localhost:8081/Durga%20sir%20web%20course/Ajax/Ajax%202%20dec%202023/school%20project%20dunamic%20data%20and%20ajax%20call/urlData.json"
+    
+    myurl = "http://localhost:8081/Durga%20sir%20web%20course/Ajax/Ajax%202%20dec%202023/School%20project%20100%25%20dynamic%20data%20using%20ajax%20call/urlData.json"
+
+    
     $.ajax({
         url : myurl,
     
         method : "GET",
         datatype : "JSON",
+
         success : function(response){
 
+           
             storeSchoollist = response.schoolList
             console.log(storeSchoollist);
 
@@ -116,15 +121,19 @@ document.querySelector(".maincontainer").append(ultag);
 
         submit(storeSchoollist[i]);
 
+         } },
         
-        }
-
-        },
 
 
         error : function (error){
-            console.log("Failed")
-            console.log(error)
+            
+
+               
+                console.log("Failed")
+                console.log(error)
+      
+
+           
         }
     
     })
