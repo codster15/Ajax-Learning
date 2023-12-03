@@ -79,7 +79,7 @@ font-family: Arial, Helvetica, sans-serif;
 button{
     position: fixed;
     bottom: 40px;
-    right: 473px;
+    right: 560px;
     padding: 20px;
     width: 800px;
     border-radius: 15px;
@@ -110,4 +110,24 @@ button{
     font-weight: bolder;
     background-color: orange;
     padding: 3px;
+}
+
+.showloading{
+    position: absolute;
+    top: 34%;
+    left: 42%;
+    display: none;
+    font-size: 40px;
+    color: red;
+    padding: 10px;
+}
+
+#showerror{
+    position: absolute;
+    top: 38%;
+    left: 30%;
+    display: none;
+    font-size: 40px;
+    color: red;
+    padding: 10px;
 }
