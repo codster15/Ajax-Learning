@@ -92,39 +92,52 @@ document.querySelector(".maincontainer").append(ultag);
 
 
 
+
+
+
+
+
+
+
  btn.addEventListener("click" , ()=>{
 
     
-    myurl = "http://localhost:8081/Durga%20sir%20web%20course/Ajax/Ajax%202%20dec%202023/School%20project%20100%25%20dynamic%20data%20using%20ajax%20call/urlData.json"
+    myurl = "http://localhost:8081/Durga%20sir%20web%20course/Ajax/ajax%203dec%202023/school%20project%20%20ajax%20call%20%20show%20error%20loading%20msg/urlData.json"
 
-    
+   
     $.ajax({
         url : myurl,
     
         method : "GET",
         datatype : "JSON",
-
         success : function(response){
 
-           
-            storeSchoollist = response.schoolList
-            console.log(storeSchoollist);
+            setTimeout(() => {
+                document.querySelector(".showloading").style.display = "none"
+                storeSchoollist = response.schoolList
+                console.log(storeSchoollist);
+    
+                for( var i = 0; i < storeSchoollist.length; i ++ ){
+                    
+            submit(storeSchoollist[i]);
+    
+            
+            }
+            }, 2000);
+          
 
-            for( var i = 0; i < storeSchoollist.length; i ++ ){
-
-        submit(storeSchoollist[i]);
-
-         } },
-        
+        },
 
 
         error : function (error){
             
-
-               
+            setTimeout(()=>{
+                document.querySelector(".showloading").style.display = "none"
+                document.querySelector("#showerror").innerHTML = "Server is not Responding try After Some time ...!"
+                document.querySelector("#showerror").style.display = "block"
                 console.log("Failed")
                 console.log(error)
-      
+            } , 2000)
 
            
         }
