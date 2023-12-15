@@ -1,0 +1,28 @@
+
+
+{
+
+    "Movieslist" : [
+        {
+            "image" : "https://variety.com/wp-content/uploads/2022/12/Animal-first-look.jpg",
+            "movieName" : " Animal",
+            "ReleaseYear" : 2023,
+            "TotalCollection" : " ₹717 crore worldwide"
+        },
+
+        {
+            "image" : "https://live.staticflickr.com/65535/51856360367_0038ec27fa_b.jpg",
+            "movieName" : " RRR ",
+            "ReleaseYear" : "March 25, 2022",
+            "TotalCollection" : " 1000 crores worldwide "
+        },
+
+        {
+            "image" : "https://e1.pxfuel.com/desktop-wallpaper/108/788/desktop-wallpaper-kgf-chapter-2-full-movie-facts-kgf-chapter-2-poster.jpg",
+            "movieName" : " KGF ",
+            "ReleaseYear" :"21 December 2018",
+            "TotalCollection" : " ₹1,200-1,250 crore globally "
+        }
+
+    ]
+}
