@@ -220,6 +220,11 @@ JSONP
 
 .        Project 1   SCHOOL LIST                                      web page using --> Templating
 
+Important :
+  
+    Handlebars.compile    --> spelling correct
+    handlebar cdn         --> correct link
+    first load the template using ajax. if Successfull then inside make another ajax to load json data 
 
 
 
@@ -615,7 +620,11 @@ button{
 .  Project 2    MOVIES LIST                                     2nd web page using --> Templating
 
 
-
+Important :
+  
+    Handlebars.compile    --> spelling correct
+    handlebar cdn         --> correct link
+    first load the template using ajax. if Successfull then inside make another ajax to load json data 
 
 
 
@@ -945,3 +954,118 @@ button:hover{
 
 
 ==========================================================================================================================================
+
+.                                       XML data structure
+
+
+
+
+
+
+------------------------------------ this the xml format but reccommanded way is json data structure to make the ajax call
+
+<?xml version "1.0" encodifng = "UTF-8"?>
+<BookDetails>
+
+
+    <book ID = "b001">
+        <price> 200 </price>
+        <discount> 20% </discount>
+        <bookname> My dreams </bookname>
+   </book>    
+   
+   <book ID = "b002">
+    <price> 300 </price>
+    <discount> 20% </discount>
+    <bookname> My dreams </bookname>
+    </book> 
+
+    <book ID = "b003">
+        <price> 500 </price>
+        <discount> 40% </discount>
+        <bookname> My dreams </bookname>
+    </book> 
+
+</BookDetails>
+
+
+-------------------------------------------------------------------------------------------------------------------
+. Important --> 40:00
+
+.                                                                 Asynchronus cummunication
+
+
+
+. 7 oct 
+time - 30:00
+
+
+
+console.log("start")
+ 
+    $.ajax({
+        ...
+        ...
+
+        success(){
+            console.log("communication is successsfull")
+        }
+        error (){
+            console.log("error")
+        }
+    })
+
+console.log("End")
+
+
+----------------------------------
+
+result -->
+
+first this line will execute ------> console.log("start")
+second this line will execute -------> console.log("End")
+third this line will execute   -------> console.log("communication is successsfull")
+
+
+
+note -->  the reason is we don't wait for server respose remaining code will get executed . we don't bother about server response if respose will come from the server it will be shown by Success call back method.....this process is known as ............................ ( Aasyncronus communication ) 
+
+
+
+Definiton of Asynchronus communication-->
+
+    the concept of not waiting for the response we continue the flow of remainig instruction we call it as Asynchronus communication. 
+
+================================================================================================================================
+
+
+
+.                                                         Synchronus cummunication
+
+time 33:00
+
+Note    -->       to make the  Synchronus cummunication which is opposite of  Asynchronus cummunication 
+        -->       we have to make some changes in  ajax Call --> (async : false),
+        -->       Synchronus cummunication will not execute the remainig code till it get the response from the server
+
+
+
+            console.log("start")
+ 
+            $.ajax({
+                ...
+                ...
+                
+        -->    async : false,
+
+
+                success(){
+                    console.log("communication is successsfull")
+                }
+                error (){
+                    console.log("error")
+                }
+            })
+        
+        console.log("End")
+

@@ -21,13 +21,6 @@
 // </ul> -->
 
 
-var storeMovieList = []
-
-var showdata = (object)=>{
-
-
-
-}
 
 
  var store ; 
@@ -65,6 +58,12 @@ clickbtn.addEventListener("click" , ()=>{
                             
                         },
                         error : function (error){
+
+                            setTimeout(()=>{
+                                document.querySelector(".loadingimg").style.display = "none"
+                                document.querySelector(".serverdown").style.display = "block"
+                            } , 3000)
+
                             console.log(error)
 
                         }
