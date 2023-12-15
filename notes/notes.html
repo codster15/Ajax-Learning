@@ -218,7 +218,7 @@ JSONP
 =================================================================================================================================
 
 
-.                                                 web page using --> Templating
+.        Project 1   SCHOOL LIST                                      web page using --> Templating
 
 
 
@@ -600,6 +600,346 @@ button{
     <script src="jQuery.js"></script>
     <script src="app.js"></script>
   </body>
+</html>
+
+
+
+==========================================================================================================================================
+
+
+
+
+
+
+
+.  Project 2    MOVIES LIST                                     2nd web page using --> Templating
+
+
+
+
+
+
+let's start
+
+3rd party apis -handlebar
+
+
+inorder to do templating few steps need to be follow
+
+
+        take the static template 
+        fill the dynamic data ( --data--) within static template 
+        show the template with data on the page 
+
+
+
+
+
+
+.    ----------------------------------------------     javascript file          --------------------------------------------
+
+<script>
+    var storeMovieList = []
+
+var showdata = (object)=>{
+
+
+
+}
+
+
+ var store ; 
+var makeTemplateCopy ;
+var MakejsonDataCopy ; 
+var jsonDataUrl = "http://localhost:8081/Durga%20sir%20web%20course/Ajax/15_dec%20dynamic%20data%20-/movielist.json"
+
+var clickbtn = document.querySelector(".btn")
+
+clickbtn.addEventListener("click" , ()=>{
+
+            document.querySelector(".loadingimg").style.display = "block"
+            document.querySelector(".serverdown").style.display = "none"
+
+
+            $.ajax({
+                url : "Movie_template.htm",
+                method : "get",
+                success : function(template){
+                    console.log(template);
+                    makeTemplateCopy = template
+
+                    $.ajax({
+                        url : jsonDataUrl,
+                        method : "get",
+                        datatype : "json",
+                        success :function(jsonDataReceiving){
+                            MakejsonDataCopy = jsonDataReceiving.Movieslist;
+                            console.log(MakejsonDataCopy);
+                            
+                            for( var i = 0 ; i < MakejsonDataCopy.length ; i ++ ){
+                                loadAndShowDate(MakejsonDataCopy[i]);
+                            }
+
+                            
+                        },
+                        error : function (error){
+                            console.log(error)
+
+                        }
+                    })
+
+                },
+                error: function(error){
+
+                    console.log(error)
+                } 
+            })
+            
+
+
+});
+
+var loadAndShowDate = (jsonData)=>{
+
+
+        var template = Handlebars.compile(makeTemplateCopy);
+        var loadtemplateAndJson = template(jsonData);
+
+        setTimeout(()=>{
+            document.querySelector(".maincontainer").innerHTML += loadtemplateAndJson;
+            document.querySelector(".loadingimg").style.display = "none"
+        } , 3000)
+       
+
+        console.log(typeof(template));
+
+
+}
+</script>
+
+
+
+.       --------------------------------------------   template structure file         ----------------------------------
+
+<html>
+  <ul class="ultag">
+    <li>
+        <img src="{{image}}" alt="" />
+    </li>
+    
+    <li>
+        <span> Movie Name - </span>
+        <span class="moviename"> {{movieName}}</span>
+    </li>
+    
+    
+    <li>
+        <span> Release Year - </span>
+        <span class="movieyear">  {{ReleaseYear}}</span>
+    </li>
+    
+    <li>
+        <span> Total Collection - </span>
+        <span class="movieCollection">  {{TotalCollection}} </span>
+    </li>
+    </ul>
+</html>
+
+
+
+.           -------------------------------           Json data file     --------------------------------
+
+
+<script>
+
+
+{
+
+"Movieslist" : [
+    {
+        "image" : "https://variety.com/wp-content/uploads/2022/12/Animal-first-look.jpg",
+        "movieName" : " Animal",
+        "ReleaseYear" : 2023,
+        "TotalCollection" : " ₹717 crore worldwide"
+    },
+
+    {
+        "image" : "https://live.staticflickr.com/65535/51856360367_0038ec27fa_b.jpg",
+        "movieName" : " RRR ",
+        "ReleaseYear" : "March 25, 2022",
+        "TotalCollection" : " 1000 crores worldwide "
+    },
+
+    {
+        "image" : "https://e1.pxfuel.com/desktop-wallpaper/108/788/desktop-wallpaper-kgf-chapter-2-full-movie-facts-kgf-chapter-2-poster.jpg",
+        "movieName" : " KGF ",
+        "ReleaseYear" :"21 December 2018",
+        "TotalCollection" : " ₹1,200-1,250 crore globally "
+    }
+
+]
+}
+</script>
+
+
+
+.          -------------------------------            CSS style file     ----------------------------------------
+
+<style>
+  
+body{
+    background-color: #F4F2DE;
+}
+
+
+h1{
+    text-align: center;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 40px;
+    color: white;
+    border: 5px solid #FF90BC;
+    border-radius: 10px;
+    margin: 20px 700px 20px 700px;
+    padding: 5px;
+    background-color: rgb(22, 22, 22);
+}
+
+
+/* ----------------Ul tag------------------- */
+.loadingimg{
+    position: absolute;
+    top: 35%;
+    left: 38%;
+    display: none;
+}
+
+.loadclass{
+
+    background-color: #F4F2DE;
+}
+
+
+
+.serverdown{
+    color: red;
+    font-size: 60px;
+    position: absolute;
+    top: 44%;
+    left: 30%;
+    font-weight: bolder;
+    display: none;
+    
+
+}
+
+.ultag{
+    width: 500px;
+  
+    margin: 20px;
+    padding: 10px;
+    background-color: white;
+    float: left;
+    border-radius: 10px;
+
+}
+
+li{
+    list-style: none;
+    margin: 15px;
+    padding: 10px;
+    border: 3px solid #72D6C9;
+    text-align: center;
+    border-radius: 12px;
+}
+
+ img{
+    height: 250px;
+    width: 420px;
+    border-radius: 10px;
+    padding: 0px;
+    
+ }
+
+
+li span{
+    font-size: 21px ;
+    font-weight: bolder;
+
+}
+
+.moviecollection{
+    background-color: orange;
+ 
+}
+
+
+
+
+
+
+/* ----------------------------------------- */
+
+button{
+    height: 60px;
+    width: 400px;
+    letter-spacing: 2px;
+    word-spacing: 3px;
+    border: 0px solid;
+    background-color: #7C9D96;
+    border-radius: 8px;
+    color: white;
+    font-size: 20px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background-color 0.4s ease ;
+    margin-left: 730px;
+}
+
+button:hover{
+    background-color: #2a574d;
+}
+
+.btndiv{
+
+    text-align: center;
+    position: fixed;
+    bottom: 50px;
+
+}
+</style>
+
+
+. ----------------------------------------             Index.html file     ---------------------------------
+
+<html>
+  <!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css" />
+</head>
+
+<body>
+    <h1>Blockbuster Movies</h1>
+
+    <div class="maincontainer">
+       <div class="loadingimg"> <img src="https://cdn-images-1.medium.com/v2/resize:fit:1600/1*CsJ05WEGfunYMLGfsT2sXA.gif" alt="" class="loadclass"></div>
+       <div class="serverdown"> Server down ! Web Page Not Found</div>
+    </div>
+
+    <div class="btndiv">
+        <button class="btn">Click here for movies list</button>
+    </div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.7.8/handlebars.min.js"></script>
+    <script src="jQuery.js"></script>
+    <script src="app.js"></script>
+</body>
+
+</html>
 </html>
 
 
